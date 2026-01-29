@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> "Fun Website" </title>
+	<link rel="stylesheet" href="style.css">
+	<script src="/socket.io/socket.io.js"></script>
+  	<script defer src="script.js"></script>
+</head>
+<body>
+	<h1 style="text-align:center"> Welcome to Fun Website </h1>
+	<p style="text-align:center"> Click to add to counter and chat around! </p>
+	<img id="banana" src="banana.png" alt="Banana" width="100">
+	<h2> Clicks: <span id="counter"> 0 </span></h2>
+
+	<div id="chat">
+		<div id="chatBox" class="chatBox"></div>
+		<form id="chatForm">
+			<input type="text" id="chatInput" placeholder="Type a message" autocomplete="off">
+			<button type="submit">Send</button>
+		</form>
+	</div>
+</body>
+</html>
