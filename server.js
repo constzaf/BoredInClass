@@ -1,3 +1,4 @@
+let usersOnline = 0;
 const express = require("express");
 const app = express();
 const http = require("http").createServer(app);
@@ -16,6 +17,10 @@ let cursors = {};
 io.on("connection", (socket) => {
   const username = socket.handshake.auth.username || "Guest" + Math.floor(Math.random()*1000);
   socket.username = username;
+  usersOnline ++;
+  
+  // Send number of users online
+  io.emit("usersOnline", usersOnline);
 
   // Send initial state
   socket.emit("init", { clickCount, cursors });
@@ -42,6 +47,8 @@ io.on("connection", (socket) => {
 
   // Disconnect
   socket.on("disconnect", () => {
+    usersOnline--;
+    io.emit("usersOnline", usersOnline);
     delete cursors[socket.id];
     io.emit("system", `${username} left`);
     io.emit("removeCursor", socket.id);

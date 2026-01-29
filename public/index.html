@@ -7,18 +7,24 @@
   	<script defer src="script.js"></script>
 </head>
 <body>
+	<p>Users online: <span id="usersOnline">0</span></p>
 	<h1 style="text-align:center"> Welcome! </h1>
 	<p style="text-align:center"> Chat around while you wait for this lecture to be over... </p>
-	<img id="banana" src="banana.png" alt="Banana" width="100">
-	<h2> Clicks: <span id="counter"> 0 </span></h2>
-
-	<p> ChatBox </p>
-	<div id="chat">
-		<div id="chatBox" class="chatBox"></div>
-		<form id="chatForm">
-			<input type="text" id="chatInput" placeholder="Type a message" autocomplete="off">
-			<button type="submit">Send</button>
-		</form>
+	<div class="row">
+		<div class="left">
+			<div id="chat">
+				<p> Chatbox </p>
+				<div id="chatBox" class="chatBox"></div>
+				<form id="chatForm">
+					<input type="text" id="chatInput" placeholder="Type a message" autocomplete="off">
+					<button type="submit">Send</button>
+				</form>
+			</div>
+		</div>
+		<div class="right">
+			<img id="banana" src="banana.png" alt="Banana" width="100">
+        		<h2> Clicks: <span id="counter"> 0 </span></h2>
+		</div>		
 	</div>
 </body>
 </html>

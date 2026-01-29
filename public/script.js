@@ -5,6 +5,14 @@ if (!username) {
   localStorage.setItem("username", username);
 }
 
+// Update online user count
+const usersOnlineEl = document.getElementById("usersOnline");
+
+socket.on("usersOnline", (count) => {
+  usersOnlineEl.textContent = count;
+});
+
+
 // Connect
 const socket = io({ auth: { username } });
 
