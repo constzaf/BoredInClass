@@ -16,14 +16,14 @@ socket.on("usersOnline", (count) => {
 });
 
 // DOM elements
-const banana = document.getElementById("banana");
+const kirkstow = document.getElementById("kirkstow");
 const counter = document.getElementById("counter");
 const chatBox = document.getElementById("chatBox");
 const chatForm = document.getElementById("chatForm");
 const chatInput = document.getElementById("chatInput");
 
 // Banana click
-banana.addEventListener("click", () => socket.emit("bananaClick"));
+kirkstow.addEventListener("click", () => socket.emit("kirkstowClick"));
 
 // Chat
 chatForm.addEventListener("submit", (e) => {

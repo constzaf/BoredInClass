@@ -31,7 +31,7 @@ io.on("connection", (socket) => {
   socket.broadcast.emit("system", `${username} joined`);
 
   // Click events
-  socket.on("bananaClick", () => {
+  socket.on("kirkstowClick", () => {
     clickCount++;
 
     if (!leaderboard[socket.username]){
