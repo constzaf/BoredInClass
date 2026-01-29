@@ -25,6 +25,7 @@ io.on("connection", (socket) => {
 
   // Send initial state
   socket.emit("init", { clickCount, cursors });
+  socket.emit("leaderboard", leaderboard);
 
   // Broadcast join message
   socket.broadcast.emit("system", `${username} joined`);
