@@ -1,4 +1,5 @@
 let usersOnline = 0;
+let leaderboard = {};
 const express = require("express");
 const app = express();
 const http = require("http").createServer(app);
@@ -31,7 +32,13 @@ io.on("connection", (socket) => {
   // Click events
   socket.on("bananaClick", () => {
     clickCount++;
+
+    if (!leaderboard[socket.username]){
+    	leaderboard[socket.username] = 0;
+    }
+    leaderboard[socket.username]++;
     io.emit("updateCount", clickCount);
+    io.emit("leaderboard", leaderboard);
   });
 
   // Cursor movement
@@ -48,10 +55,12 @@ io.on("connection", (socket) => {
   // Disconnect
   socket.on("disconnect", () => {
     usersOnline--;
+    delete leaderboard[socket.username];
     io.emit("usersOnline", usersOnline);
     delete cursors[socket.id];
     io.emit("system", `${username} left`);
     io.emit("removeCursor", socket.id);
+    io.emit("leaderboard", leaderboard);
   });
 });
 

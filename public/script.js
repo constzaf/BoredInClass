@@ -52,6 +52,21 @@ socket.on("system", (msg) => {
   chatBox.scrollTop = chatBox.scrollHeight;
 });
 
+const leaderboardEl = document.getElementById("leaderboard");
+
+socket.on("leaderboard", (data) => {
+  leaderboardEl.innerHTML = "";
+
+  const sorted = Object.entries(data)
+    .sort((a, b) => b[1] - a[1]);
+
+  for (const [user, clicks] of sorted) {
+    const li = document.createElement("li");
+    li.textContent = `${user}: ${clicks}`;
+    leaderboardEl.appendChild(li);
+  }
+});
+
 // Cursor updates
 socket.on("updateCursors", ({ id, pos }) => {
   let el = document.getElementById(`cursor-${id}`);
