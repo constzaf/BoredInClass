@@ -10,4 +10,28 @@ body { font-family: sans-serif; margin: 20px; }
 .left {
   margin-right: 300px; /* spacing */
 }
+#leaderboard-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 200px;
+
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+
+  font-family: sans-serif;
+}
+
+#leaderboard {
+  list-style: none;      /* removes bullets */
+  padding: 0;            /* removes left indent */
+  margin: 0;
+}
+
+#leaderboard li {
+  text-align: right;
+}
+
 
