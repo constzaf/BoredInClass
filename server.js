@@ -55,7 +55,6 @@ io.on("connection", (socket) => {
   // Disconnect
   socket.on("disconnect", () => {
     usersOnline--;
-    delete leaderboard[socket.username];
     io.emit("usersOnline", usersOnline);
     delete cursors[socket.id];
     io.emit("system", `${username} left`);
