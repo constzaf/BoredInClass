@@ -8,7 +8,7 @@ body { font-family: sans-serif; margin: 20px; }
 }
 
 .left {
-  margin-right: 300px; /* spacing */
+  margin-right: 150px; /* spacing */
 }
 #leaderboard-container {
   position: fixed;
