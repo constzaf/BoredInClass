@@ -5,7 +5,7 @@ color: peachpuff;
 background-color: cornflowerblue;
 }
 #chat { width: 400px; margin-top: 20px;}
-.chatBox { border: 3px solid #ccc; border-color: darkslateblue; height: 300px; background: peachpuff; overflow-y: auto; padding: 5px; margin-bottom: 5px; }
+.chatBox { border: 3px solid #ccc; color: black; border-color: darkslateblue; height: 300px; background: peachpuff; overflow-y: auto; padding: 5px; margin-bottom: 5px; }
 input[type=text]{
 	background-color: peachpuff;
 }
