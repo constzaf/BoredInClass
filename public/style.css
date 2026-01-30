@@ -1,6 +1,14 @@
-body { font-family: sans-serif; margin: 20px; }
-#chat { width: 400px; margin-top: 20px; }
-.chatBox { border: 3px solid #ccc; height: 300px; overflow-y: auto; padding: 5px; margin-bottom: 5px; }
+body { 
+font-family: sans-serif; 
+margin: 20px;
+color: peachpuff;
+background-color: cornflowerblue;
+}
+#chat { width: 400px; margin-top: 20px;}
+.chatBox { border: 3px solid #ccc; border-color: darkslateblue; height: 300px; background: peachpuff; overflow-y: auto; padding: 5px; margin-bottom: 5px; }
+input[type=text]{
+	background-color: peachpuff;
+}
 .cursor { position: absolute; pointer-events: none; background: green; padding: 2px 5px; border-radius: 3px; font-size: 18px; }
 .row {
   display: flex;
@@ -15,15 +23,14 @@ body { font-family: sans-serif; margin: 20px; }
   right: 10px;
   width: 200px;
 
-  color: black;
+  color: peachpuff;
   border-radius: 8px;
-
   font-family: sans-serif;
 }
 
 #leaderboard {
   list-style: none;      /* removes bullets */
-  padding: 0;            /* removes left indent */
+  padding: 0;  /* removes left indent */
   margin: 0;
 }
 
